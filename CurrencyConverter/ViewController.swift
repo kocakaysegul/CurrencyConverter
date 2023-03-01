@@ -44,10 +44,37 @@ class ViewController: UIViewController {
                 //2.
                 if data != nil {
                     do {
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,Any>
                         //Async
                         DispatchQueue.main.async {
-                            print(jsonResponse)
+                            //print(jsonResponse["rates"])
+                            if let rates = jsonResponse["rates"] as? [String : Any] {
+                                //print(rates)
+                                if let cad = rates["CAD"] as? Double {
+                                    //print(cad)
+                                    self.cadLabel.text = "CAD : \(cad)"
+                                }
+                                if let chf = rates["CHF"] as? Double {
+                                    //print(cad)
+                                    self.chfLabel.text = "CHF : \(chf)"
+                                }
+                                if let gbp = rates["GBP"] as? Double {
+                                    //print(cad)
+                                    self.gbpLabel.text = "GBP : \(gbp)"
+                                }
+                                if let jpy = rates["JPY"] as? Double {
+                                    //print(cad)
+                                    self.jpyLabel.text = "JPY : \(jpy)"
+                                }
+                                if let usd = rates["USD"] as? Double {
+                                    //print(cad)
+                                    self.usdLabel.text = "USD : \(usd)"
+                                }
+                                if let tury = rates["TRY"] as? Double {
+                                    //print(cad)
+                                    self.tryLabel.text = "TRY : \(tury)"
+                                }
+                            }
                         }
                         
                     } catch {

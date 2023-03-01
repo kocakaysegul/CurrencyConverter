@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         // 2. Response & Data
         // 3. Parsing & JSON Serialization
         
+        
+        //1.
         let url = URL(string: "https://raw.githubusercontent.com/atilsamancioglu/CurrencyData/main/currency.json")
         let session = URLSession.shared
         //Closure
@@ -39,9 +41,23 @@ class ViewController: UIViewController {
                 alert.addAction(okButton)
                 self.present(alert, animated: true)
             } else {
+                //2.
+                if data != nil {
+                    do {
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        //Async
+                        DispatchQueue.main.async {
+                            print(jsonResponse)
+                        }
+                        
+                    } catch {
+                        print("Error!")
+                    }
+                }
                 
             }
         }
+        task.resume()
     }
 }
 

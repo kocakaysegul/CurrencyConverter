@@ -63,6 +63,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Get Rates"/>
+                                <connections>
+                                    <action selector="getRatesClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KAn-3T-bTH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al2-eW-Myq">
                                 <rect key="frame" x="160" y="422" width="71" height="42"/>
@@ -75,6 +78,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="cadLabel" destination="020-Iw-bmB" id="zk6-VH-Yct"/>
+                        <outlet property="chfLabel" destination="38V-A8-8cE" id="Fdd-sb-hsh"/>
+                        <outlet property="gbpLabel" destination="dFG-AP-Jb8" id="cs9-GY-ebX"/>
+                        <outlet property="jpyLabel" destination="Wi0-9W-zna" id="lax-yt-7fl"/>
+                        <outlet property="tryLabel" destination="wpb-AQ-Kti" id="Wsh-za-Xv2"/>
+                        <outlet property="usdLabel" destination="Al2-eW-Myq" id="Kkk-Ch-QhT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
